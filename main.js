@@ -1,24 +1,27 @@
-
-var http = require('http');
+let http = require('http');
 
 function fetch(url, path) {
-    var options = {
-        host: url,
-        path: path
-    };
-    callback = function (response) {
-        var str = '';
+    return new Promise(function (resolve, reject) {
+        http.get({
+            host: url,
+            path: path
+        },
+        callback = function (response) {
+            let str = '';
 
-        response.on('data', function (chunk) {
-            str += chunk;
-        });
+            response.on('data', function (chunk) {
+                str += chunk;
+            });
 
-        response.on('end', function () {
-            console.log(str);
-            return str;
-        });
-    }
-    http.request(options, callback).end();
+            response.on('end', function () {
+                resolve(str);
+            });
+
+            response.on('error', function (err) {
+                console.log(err);
+                reject(err);
+            });
+        })
+    });
 }
-// fetch("dog.ceo","/api/breeds/list/all"); example
-exports.fetch = fetch;
+module.exports = fetch;
