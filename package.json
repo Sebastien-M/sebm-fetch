@@ -1,0 +1,24 @@
+{
+  "name": "sebm-fetch",
+  "version": "0.1.0",
+  "description": "package for making ajax requests",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sebastien-M/sebm-fetch.git"
+  },
+  "keywords": [
+    "promise",
+    "ajax",
+    "request"
+  ],
+  "author": "Sébastien Mandaba",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sebastien-M/sebm-fetch/issues"
+  },
+  "homepage": "https://github.com/Sebastien-M/sebm-fetch#readme"
+}
