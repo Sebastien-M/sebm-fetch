@@ -6,7 +6,7 @@ function fetch(url, path) {
             host: url,
             path: path
         },
-        callback = function (response) {
+        function (response) {
             let str = '';
 
             response.on('data', function (chunk) {
